@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+	<contributor>
+		<author>Anonymous</author>
+		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
+	</contributor>
+	<created>2017-09-21T05:45:15Z</created>
+	<modified>2017-09-21T05:45:15Z</modified>
+	<unit meter="1.0" name="meter"/>
+	<up_axis>Z_UP</up_axis>
+</asset>
+<library_images>
+	<image id="id-image-5" name="fire1.png">
+		<init_from>images/fire1.png</init_from>
+	</image>
+	<image id="id-image-10" name="fire0.png">
+		<init_from>images/fire0.png</init_from>
+	</image>
+</library_images>
+<library_effects>
+	<effect id="id-fx-4" name="fire1-fx">
+		<profile_COMMON>
+			<newparam sid="id-fx_surf-6">
+				<surface type="2D">
+					<init_from>id-image-5</init_from>
+					<format>A8R8G8B8</format>
+				</surface>
+			</newparam>
+			<newparam sid="id-fx_sampler-7">
+				<sampler2D>
+					<source>id-fx_surf-6</source>
+				</sampler2D>
+			</newparam>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<texture texture="id-fx_sampler-7" texcoord="CHANNEL1"/>
+					</diffuse>
+					<specular>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+					<technique profile="GODOT">
+						<unshaded>1</unshaded>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-9" name="fire0-fx">
+		<profile_COMMON>
+			<newparam sid="id-fx_surf-11">
+				<surface type="2D">
+					<init_from>id-image-10</init_from>
+					<format>A8R8G8B8</format>
+				</surface>
+			</newparam>
+			<newparam sid="id-fx_sampler-12">
+				<sampler2D>
+					<source>id-fx_surf-11</source>
+				</sampler2D>
+			</newparam>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<texture texture="id-fx_sampler-12" texcoord="CHANNEL1"/>
+					</diffuse>
+					<specular>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+					<technique profile="GODOT">
+						<unshaded>1</unshaded>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+</library_effects>
+<library_materials>
+	<material id="id-material-8" name="fire1">
+		<instance_effect url="#id-fx-4"/>
+	</material>
+	<material id="id-material-13" name="fire0">
+		<instance_effect url="#id-fx-9"/>
+	</material>
+</library_materials>
+<library_geometries>
+	<geometry id="id-mesh-14" name="Plane">
+		<mesh>
+			<source id="id-mesh-14-positions">
+				<float_array id="id-mesh-14-positions-array" count="42"> -0.198500394821167 -1.0 -1.0 -0.1985006332397461 1.0 1.0 -0.1985006332397461 -1.0 1.0 0.008253216743469238 4.371138828673793e-08 -1.0 -2.4356398582458496 -4.371138828673793e-08 1.0 -2.4356398582458496 4.371138828673793e-08 -1.0 0.008253216743469238 -1.0 0.0 -2.4356398582458496 1.0 0.0 -2.4356398582458496 -1.0 0.0 -0.198500394821167 1.0 -1.0 0.008253216743469238 4.371138828673793e-08 -1.0 0.008253216743469238 -4.371138828673793e-08 1.0 -2.4356398582458496 -4.371138828673793e-08 1.0 0.008253216743469238 1.0 0.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-14-positions-array" count="14" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-14-normals">
+				<float_array id="id-mesh-14-normals-array" count="42"> 1.0 0.0 1.1920928955078125e-07 1.0 0.0 1.1920928955078125e-07 1.0 0.0 1.1920928955078125e-07 0.0 -1.0 -4.371138828673793e-08 0.0 -1.0 -4.371138828673793e-08 0.0 -1.0 -4.371138828673793e-08 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 0.0 1.1920928955078125e-07 0.0 -1.0 -4.371138118131057e-08 0.0 -1.0 -4.371138118131057e-08 0.0 -1.0 -4.371138118131057e-08 0.0 0.0 1.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-14-normals-array" count="14" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-14-texcoord-0">
+				<float_array id="id-mesh-14-texcoord-0-array" count="28"> 0.9999000430107117 9.998001041822135e-05 9.998001041822135e-05 0.9999000430107117 0.00010003960051108152 9.998001041822135e-05 0.7623850107192993 0.038817740976810455 0.16650398075580597 0.8678488731384277 0.16650398075580597 0.038817740976810455 0.7623850107192993 0.038817740976810455 0.16650398075580597 0.8678488731384277 0.16650398075580597 0.038817740976810455 0.9999000430107117 0.9999000430107117 0.7623850107192993 0.038817740976810455 0.7623850107192993 0.8678488731384277 0.16650398075580597 0.8678488731384277 0.7623850107192993 0.8678488731384277</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-14-texcoord-0-array" count="14" stride="2">
+					<param name="S" type="float"/>
+					<param name="T" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-14-vertices">
+				<input semantic="POSITION" source="#id-mesh-14-positions"/>
+			</vertices>
+			<triangles count="2" material="id-trimat-15">
+				<input semantic="VERTEX" source="#id-mesh-14-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-14-normals" offset="0"/>
+				<input semantic="TEXCOORD" source="#id-mesh-14-texcoord-0" offset="0" set="0"/>
+				<p> 0 1 2 0 9 1 </p>
+			</triangles>
+			<triangles count="4" material="id-trimat-16">
+				<input semantic="VERTEX" source="#id-mesh-14-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-14-normals" offset="0"/>
+				<input semantic="TEXCOORD" source="#id-mesh-14-texcoord-0" offset="0" set="0"/>
+				<p> 3 4 5 6 7 8 10 11 12 6 13 7 </p>
+			</triangles>
+		</mesh>
+	</geometry>
+</library_geometries>
+<library_controllers>
+	<controller id="id-controller-17">
+		<skin source="#id-mesh-14">
+			<bind_shape_matrix> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </bind_shape_matrix>
+			<source id="id-controller-17-joints">
+				<Name_array id="id-controller-17-joints-array" count="1"> id-skelbones-2-0</Name_array>
+				<technique_common>
+				<accessor source="#id-controller-17-joints-array" count="1" stride="1">
+					<param name="JOINT" type="Name"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-controller-17-bind_poses">
+				<float_array id="id-controller-17-bind_poses-array" count="16">  3.255882319308512e-08 4.29390780709582e-08 1.0 -0.0 -1.0 -1.843764356617458e-15 3.255882319308512e-08 0.0 1.3980458788933519e-15 -1.0 4.29390780709582e-08 -0.0 -0.0 0.0 -0.0 1.0  </float_array>
+				<technique_common>
+				<accessor source="#id-controller-17-bind_poses-array" count="1" stride="16">
+					<param name="TRANSFORM" type="float4x4"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-controller-17-skin_weights">
+				<float_array id="id-controller-17-skin_weights-array" count="14"> 1.0 1.0 1.0 0.9999999403953552 0.9999999403953552 1.0 0.9999999403953552 0.9999999403953552 1.0 1.0 0.9999999403953552 1.0 0.9999999403953552 1.0</float_array>
+				<technique_common>
+				<accessor source="#id-controller-17-skin_weights-array" count="14" stride="1">
+					<param name="WEIGHT" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<joints>
+				<input semantic="JOINT" source="#id-controller-17-joints"/>
+				<input semantic="INV_BIND_MATRIX" source="#id-controller-17-bind_poses"/>
+			</joints>
+			<vertex_weights count="14">
+				<input semantic="JOINT" source="#id-controller-17-joints" offset="0"/>
+				<input semantic="WEIGHT" source="#id-controller-17-skin_weights" offset="1"/>
+				<vcount> 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+				<v> 0 0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0 10 0 11 0 12 0 13</v>
+			</vertex_weights>
+		</skin>
+	</controller>
+</library_controllers>
+<library_animation_clips>
+	<animation_clip name="fire" start="0.0" end="0.125">
+		<instance_animation url="#id-anim-18"/>
+		<instance_animation url="#id-anim-19"/>
+	</animation_clip>
+</library_animation_clips>
+<library_visual_scenes>
+	<visual_scene id="id-scene-1" name="scene">
+		<node id="Armature" name="Armature" type="NODE">
+			<matrix sid="transform"> 7.549790126404332e-08 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0  </matrix>
+			<node id="id-bone-3" sid="id-skelbones-2-0" name="Bone" type="JOINT">
+				<matrix sid="transform"> 1.0 -4.29390780709582e-08 4.29390780709582e-08 0.0 4.29390780709582e-08 0.0 -1.0 0.0 4.29390780709582e-08 1.0 0.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+			</node>
+			<node id="Plane" name="Plane" type="NODE">
+				<matrix sid="transform"> 7.549790126404332e-08 0.0 1.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0  </matrix>
+				<instance_controller url="#id-controller-17">
+					<skeleton>#id-bone-3</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="id-trimat-15" target="#id-material-8"/>
+							<instance_material symbol="id-trimat-16" target="#id-material-13"/>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</node>
+	</visual_scene>
+</library_visual_scenes>
+<library_animations>
+	<animation id="id-anim-18">
+		<source id="id-anim-18-input">
+			<float_array id="id-anim-18-input-array" count="4"> 0.0 0.041666666666666664 0.08333333333333333 0.125</float_array>
+			<technique_common>
+				<accessor source="#id-anim-18-input-array" count="4" stride="1">
+					<param name="TIME" type="float"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<source id="id-anim-18-transform-output">
+			<float_array id="id-anim-18-transform-output-array" count="64">  7.549790126404332e-08 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0    7.549790126404332e-08 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0    7.549790126404332e-08 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0    7.549790126404332e-08 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 7.549790126404332e-08 0.0 0.0 0.0 0.0 1.0  </float_array>
+			<technique_common>
+				<accessor source="#id-anim-18-transform-output-array" count="4" stride="16">
+					<param name="TRANSFORM" type="float4x4"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<source id="id-anim-18-interpolation-output">
+			<Name_array id="id-anim-18-interpolation-output-array" count="4"> LINEAR LINEAR LINEAR LINEAR</Name_array>
+			<technique_common>
+				<accessor source="#id-anim-18-interpolation-output-array" count="4" stride="1">
+					<param name="INTERPOLATION" type="Name"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<sampler id="id-anim-18-sampler">
+			<input semantic="INPUT" source="#id-anim-18-input"/>
+			<input semantic="OUTPUT" source="#id-anim-18-transform-output"/>
+			<input semantic="INTERPOLATION" source="#id-anim-18-interpolation-output"/>
+		</sampler>
+		<channel source="#id-anim-18-sampler" target="Armature/transform"/>
+	</animation>
+	<animation id="id-anim-19">
+		<source id="id-anim-19-input">
+			<float_array id="id-anim-19-input-array" count="4"> 0.0 0.041666666666666664 0.08333333333333333 0.125</float_array>
+			<technique_common>
+				<accessor source="#id-anim-19-input-array" count="4" stride="1">
+					<param name="TIME" type="float"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<source id="id-anim-19-transform-output">
+			<float_array id="id-anim-19-transform-output-array" count="64">  0.09865009784698486 -4.2359440399764026e-09 4.2359440399764026e-09 0.0 4.2359440399764026e-09 0.0 -0.09865009784698486 0.0 4.2359440399764026e-09 0.09865009784698486 0.0 0.0 0.0 0.0 0.0 1.0    0.3163739740848541 -1.3584807057043236e-08 1.3584807057043236e-08 0.0 1.3584807057043236e-08 0.0 -0.3163739740848541 0.0 1.3584807057043236e-08 0.3163739740848541 0.0 0.0 0.0 0.0 0.0 1.0    0.7822760939598083 -3.359021505389137e-08 3.359021505389137e-08 0.0 3.359021505389137e-08 0.0 -0.7822760939598083 0.0 3.359021505389137e-08 0.7822760939598083 0.0 0.0 0.0 0.0 0.0 1.0    1.0 -4.29390780709582e-08 4.29390780709582e-08 0.0 4.29390780709582e-08 0.0 -1.0 0.0 4.29390780709582e-08 1.0 0.0 0.0 0.0 0.0 0.0 1.0  </float_array>
+			<technique_common>
+				<accessor source="#id-anim-19-transform-output-array" count="4" stride="16">
+					<param name="TRANSFORM" type="float4x4"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<source id="id-anim-19-interpolation-output">
+			<Name_array id="id-anim-19-interpolation-output-array" count="4"> LINEAR LINEAR LINEAR LINEAR</Name_array>
+			<technique_common>
+				<accessor source="#id-anim-19-interpolation-output-array" count="4" stride="1">
+					<param name="INTERPOLATION" type="Name"/>
+				</accessor>
+			</technique_common>
+		</source>
+		<sampler id="id-anim-19-sampler">
+			<input semantic="INPUT" source="#id-anim-19-input"/>
+			<input semantic="OUTPUT" source="#id-anim-19-transform-output"/>
+			<input semantic="INTERPOLATION" source="#id-anim-19-interpolation-output"/>
+		</sampler>
+		<channel source="#id-anim-19-sampler" target="id-bone-3/transform"/>
+	</animation>
+</library_animations>
+<scene>
+	<instance_visual_scene url="#id-scene-1" />
+</scene>
+</COLLADA>

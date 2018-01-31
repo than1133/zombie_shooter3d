@@ -1,0 +1,24 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Scene - Root_normal.png-88c675d3b2ee91ca718c2a206c24c292.stex"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=1
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

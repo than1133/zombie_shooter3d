@@ -1,0 +1,10 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Male_Zombie_Roar.ogg-3383714508ebeaa800abbf6a525b550f.oggstr"
+
+[params]
+
+loop=true
+loop_offset=0

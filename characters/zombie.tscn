@@ -1,0 +1,141 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/zombie.gd" type="Script" id=1]
+[ext_resource path="res://models/Zombie/zombie.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 1.32869, 5.43065, 1 )
+
+[node name="zombie" type="KinematicBody" groups=[
+"zombie",
+]]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.5
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="zombie" parent="." instance=ExtResource( 2 )]
+
+editor/display_folded = true
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
+
+playback_process_mode = 1
+base_path = NodePath("../zombie")
+master_player = NodePath("../zombie/AnimationPlayer")
+data = {
+"active": true,
+"connections": [ "to_die", "out", 0, "idle_to_walk", "blend3", 0, "attack", "blend3", 1, "die", "blend3", 2, "blend3", "to_die", 0, "die1", "to_die", 1, "idle", "idle_to_walk", 0, "walk", "idle_to_walk", 1 ],
+"master": NodePath("../zombie/AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "idle",
+"id": "idle",
+"pos": Vector2( 50, 50 ),
+"type": "animation"
+}, {
+"id": "out",
+"pos": Vector2( 711, 48 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "die",
+"id": "die",
+"pos": Vector2( 339, 237 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "walk",
+"id": "walk",
+"pos": Vector2( 54, 169 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "die",
+"id": "die1",
+"pos": Vector2( 469, 222 ),
+"type": "animation"
+}, {
+"blend": -1.0,
+"id": "blend3",
+"pos": Vector2( 434, 57 ),
+"type": "blend3"
+}, {
+"autorestart": false,
+"autorestart_delay": 1.0,
+"autorestart_random_delay": 0.0,
+"fade_in": 0.0,
+"fade_out": 0.0,
+"filter": [  ],
+"id": "to_die",
+"mix": false,
+"pos": Vector2( 604, 35 ),
+"type": "oneshot"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "idle_to_walk",
+"pos": Vector2( 190, 69 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "attack",
+"id": "attack",
+"pos": Vector2( 202, 193 ),
+"type": "animation"
+} ]
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.67537, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="Area" type="Area" parent="."]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape2" type="CollisionShape" parent="Area"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.67537, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="wait_die" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+
+[connection signal="timeout" from="wait_die" to="." method="_on_wait_die_timeout"]
+
+
+[editable path="zombie"]

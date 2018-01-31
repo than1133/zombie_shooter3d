@@ -1,0 +1,10 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Zombie_Rock.ogg-b0cf2cadb4aac1e8e3f624485e11f5ca.oggstr"
+
+[params]
+
+loop=true
+loop_offset=0

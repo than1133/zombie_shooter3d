@@ -1,0 +1,7 @@
+OpenGL ES 3.0 Renderer: GeForce GT 740M/PCIe/SSE2
+GLES3: max ubo light: 409
+GLES3: max ubo reflections: 455, ubo size: 144
+WARNING: not found: gdnative/singletons
+Registered interface Native mobile
+SVG_GENERATION TIME: 0.46296
+OPENING: /home/than1133/Documents/godot3-1 (::home::than1133::Documents::godot3-1)
